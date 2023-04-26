@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "update-types": "echo $SUPABASE_ACCESS_TOKEN | npx supabase login && npx supabase projects list"
+    "update-types": "echo $SUPABASE_ACCESS_TOKEN | npx supabase login && mkdir -p src/lib/supabase/ && npx supabase gen types typescript --debug --project-id $SUPABASE_PROJECT_ID --schema public > src/lib/supabase/supabaseTypes.ts"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
