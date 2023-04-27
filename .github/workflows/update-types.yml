@@ -19,7 +19,10 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 16
-      - run: npm run update-types
+      - run: |
+          npm run update-types
+          npm install @typescript-eslint/eslint-plugin@latest --save-dev
+          npm run lint
       - name: check for file changes
         id: git_status
         run: |
