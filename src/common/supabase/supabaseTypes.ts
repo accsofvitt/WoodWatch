@@ -9,21 +9,30 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      pictures: {
+      profiles: {
         Row: {
-          created_at: string | null;
+          avatar_url: string | null;
+          full_name: string | null;
           id: string;
-          userID: string;
+          updated_at: string | null;
+          username: string | null;
+          website: string | null;
         };
         Insert: {
-          created_at?: string | null;
+          avatar_url?: string | null;
+          full_name?: string | null;
           id: string;
-          userID: string;
+          updated_at?: string | null;
+          username?: string | null;
+          website?: string | null;
         };
         Update: {
-          created_at?: string | null;
+          avatar_url?: string | null;
+          full_name?: string | null;
           id?: string;
-          userID?: string;
+          updated_at?: string | null;
+          username?: string | null;
+          website?: string | null;
         };
       };
     };
